@@ -99,3 +99,38 @@ clustering = perform_clustering_analysis(df, output_dir='./clustering_results')
 ### Dependencies
 - Core: `pysam`
 - Clustering (optional): `matplotlib`, `seaborn`, `scikit-learn`, `scipy`
+
+## Conservation Analysis
+
+Identify conserved m6A sites across species using orthologous genes.
+
+### Workflow
+
+1. **Translate CDS to Proteins**
+```python
+from plantm6a.analysis.conservation import translate_cds
+
+translate_cds(
+    input_fa="species1_cds.fa",
+    output_fa="species1_protein.fa"
+)
+```
+
+2. **Run OrthoFinder** (command line)
+```bash
+bash scripts/run_orthofinder.sh 40  # 40 threads
+```
+
+3. **Extract Pairwise Orthologs**
+```python
+from plantm6a.analysis.conservation import extract_pairwise_orthologs
+
+stats = extract_pairwise_orthologs(
+    orthogroups_tsv="orthofinder_out/Results_*/Orthogroups/Orthogroups.tsv",
+    orthologues_dir="orthofinder_out/Results_*/Orthologues/",
+    output_dir="./pairwise_orthologs/"
+)
+```
+
+### Requirements
+- OrthoFinder (install via conda): `conda install -c bioconda orthofinder`
