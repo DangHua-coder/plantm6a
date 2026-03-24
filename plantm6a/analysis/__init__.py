@@ -12,6 +12,13 @@ try:
 except ImportError:
     MOTIF_AVAILABLE = False
 
+# Conservation分析模块
+try:
+    from . import conservation
+    CONSERVATION_AVAILABLE = True
+except ImportError:
+    CONSERVATION_AVAILABLE = False
+
 if MOTIF_AVAILABLE:
     __all__ = [
         'analyze',
@@ -21,6 +28,7 @@ if MOTIF_AVAILABLE:
         'analyze_motifs',
         'perform_clustering_analysis',
         'generate_all_3mers_with_A',
+        'conservation',
     ]
 else:
     __all__ = [
@@ -29,3 +37,4 @@ else:
         'count_bed_sites_in_exons',
         'batch_analyze',
     ]
+
