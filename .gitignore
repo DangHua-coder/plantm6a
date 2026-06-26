@@ -55,3 +55,28 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Test and packaging caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated analysis outputs
+validation_outputs/
+m6A_analysis_summary_*.tsv
+*_conserved_m6A.tsv
+pair_summary.tsv
+region_distribution.tsv
+pair_region_breakdown.tsv
+multi_species_conserved_OGs.tsv
+*.pdf
+*.svg
+*.png
+
+# FASTA indexes and external tool outputs
+*.fai
+orthofinder_out/
+pairwise_tables/
+conserved_results/
+summary/
+figures/

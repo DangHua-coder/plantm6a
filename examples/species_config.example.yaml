@@ -1,0 +1,9 @@
+species:
+  - name: arabidopsis_seedling
+    genome: ../test/TAIR10.fa
+    annotation: ../test/TAIR10.release55.gtf
+    bed: ../test/Col_seedling7days_mR_coverageover20_ratioover0.05.bed6
+  - name: rice_seedling
+    genome: ../test/IRGSP-1.0.fa
+    annotation: ../test/IRGSP-1.0.release57.gtf
+    bed: ../test/Nip_7daysseddlings_cam_mR_coverageover20_ratioover0.05.bed6
